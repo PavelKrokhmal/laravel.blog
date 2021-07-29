@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::group(['prefix'=>'admin', 'namespace'=>'App\Http\Controllers\Admin'], function () {
     Route::get('/', 'MainController@index')->name('admin.index');
@@ -23,4 +23,7 @@ Route::group(['prefix'=>'admin', 'namespace'=>'App\Http\Controllers\Admin'], fun
     Route::resource('/tags', 'TagController');
     Route::resource('/posts', 'PostController');
 });
+
+Route::get('/register', 'App\Http\Controllers\UserController@create')->name('register.create');
+Route::post('/register', 'App\Http\Controllers\UserController@store')->name('register.store');
 
