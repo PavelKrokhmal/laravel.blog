@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=7.2.5",
-        "../../../../../../../../vendor/psr/event-dispatcher": "^1"
+        "psr/event-dispatcher": "^1"
     },
     "suggest": {
         "symfony/event-dispatcher-implementation": ""

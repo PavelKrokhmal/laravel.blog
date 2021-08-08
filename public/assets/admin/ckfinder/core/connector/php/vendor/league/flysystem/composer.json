@@ -23,11 +23,11 @@
     "require": {
         "php": "^7.2.5 || ^8.0",
         "ext-fileinfo": "*",
-        "../../../../../../../../vendor/league/mime-type-detection": "^1.3"
+        "league/mime-type-detection": "^1.3"
     },
     "require-dev": {
-        "../../../../../../../../vendor/phpspec/prophecy": "^1.11.1",
-        "../../../../../../../../vendor/phpunit/phpunit": "^8.5.8"
+        "phpspec/prophecy": "^1.11.1",
+        "phpunit/phpunit": "^8.5.8"
     },
     "autoload": {
         "psr-4": {

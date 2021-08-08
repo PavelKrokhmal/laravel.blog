@@ -14,26 +14,22 @@
 
   "require": {
     "php": "^5.4 || ^7.0 || ^8.0",
-    "../../../../../../../../vendor/symfony/polyfill-mbstring": "^1.17"
+    "symfony/polyfill-mbstring": "^1.17"
   },
 
   "require-dev": {
     "composer/xdebug-handler": "^1.4 || ^2.0",
-    "../../../../../../../../vendor/phpunit/phpunit": "^4.8.36 || ^7.5.15"
+    "phpunit/phpunit": "^4.8.36 || ^7.5.15"
   },
 
   "autoload": {
     "psr-4": {
       "JmesPath\\": "src/"
     },
-    "files": [
-      "src/JmesPath.php"
-    ]
+    "files": ["src/JmesPath.php"]
   },
 
-  "bin": [
-    "bin/jp.php"
-  ],
+  "bin": ["bin/jp.php"],
 
   "extra": {
     "branch-alias": {

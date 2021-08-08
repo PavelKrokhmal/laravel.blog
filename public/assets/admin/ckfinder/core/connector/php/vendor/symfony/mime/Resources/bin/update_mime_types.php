@@ -44,7 +44,7 @@ foreach ($xml as $node) {
 }
 
 // load current map
-$data = file_get_contents($output = __DIR__ . '/../../MimeTypes.php');
+$data = file_get_contents($output = __DIR__.'/../../MimeTypes.php');
 $current = [];
 $pre = '';
 $post = '';
