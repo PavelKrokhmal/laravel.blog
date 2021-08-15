@@ -25,7 +25,7 @@
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-enable-remember="true"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="../../index3.html" class="nav-link">Home</a>
@@ -297,6 +297,12 @@
                         </div>
                     @endif
 
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
                     @if (session()->has('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
@@ -336,6 +342,10 @@
             $(this).parent().parent().parent().addClass('menu-is-opening menu-open');
         }
     })
+
+    $(function () {
+        bsCustomFileInput.init();
+    });
 </script>
 
 <script src="{{asset('assets/admin/ckeditor5/build/ckeditor.js')}}"></script>
@@ -343,8 +353,9 @@
 
 <script>
 
-    ClassicEditor
-        .create( document.querySelector( '#content' ), {
+    $content = document.querySelector( '#content' )
+    if ($content) {
+        ClassicEditor.create($content, {
             ckfinder: {
                 uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
             },
@@ -402,17 +413,21 @@
         .catch( function( error ) {
             console.error( error );
         } );
+    }
 
-    ClassicEditor
-        .create( document.querySelector( '#description' ), {
+    $description = document.querySelector('#description')
+
+    if ($description) {
+        ClassicEditor.create($description, {
             alignment: {
                 options: [ 'left', 'center', 'right' ]
             },
             toolbar: [ 'heading', '|', 'alignment',  '|', 'bold', 'italic', '|', 'undo', 'redo' ]
-        } )
-        .catch( function( error ) {
-            console.error( error );
-        } );
+        })
+        .catch( function(error) {
+            console.error(error);
+        });
+    }
 
 </script>
 
